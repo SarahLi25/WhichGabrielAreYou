@@ -73,3 +73,23 @@ button:hover {
   color: #1b1b3a;
 }
 
+#resultImage {
+  display: none;
+  max-width: 300px;
+  margin: 20px auto 0;
+  border: 3px solid #304ffe;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#restartButton {
+  background-color: #304ffe;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}

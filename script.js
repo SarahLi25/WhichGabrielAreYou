@@ -1,5 +1,6 @@
 let form = document.getElementById('quizForm');
 let resultDiv = document.getElementById('result');
+let resultImage = document.getElementById('resultImage');
 
 form.addEventListener('submit', function(event) {
   event.preventDefault();
@@ -22,35 +23,45 @@ form.addEventListener('submit', function(event) {
   let maxScore = happy;
 
   if (sad > maxScore) {
-    highest = 'sad';
-    maxScore = sad;
+    highest = 'sad'; maxScore = sad;
   }
   if (mad > maxScore) {
-    highest = 'mad';
-    maxScore = mad;
+    highest = 'mad'; maxScore = mad;
   }
   if (disappointed > maxScore) {
-    highest = 'disappointed';
-    maxScore = disappointed;
+    highest = 'disappointed'; maxScore = disappointed;
   }
   if (hungry > maxScore) {
-    highest = 'hungry';
-    maxScore = hungry;
+    highest = 'hungry'; maxScore = hungry;
   }
 
   let message = "";
 
   if (highest === 'happy') {
     message = "😊 You're Happy Gabriel! Full of joy and positivity!";
+    resultImage.src = "assets/happy.jpeg";
+
   } else if (highest === 'sad') {
     message = "😢 You're Sad Gabriel. Deep, reflective, and soft-hearted.";
+    resultImage.src = "assets/sad.jpeg";
+
   } else if (highest === 'mad') {
     message = "😡 You're Mad Gabriel! Fierce, fiery, and passionate.";
+    resultImage.src = "assets/mad.jpeg";
+
   } else if (highest === 'disappointed') {
     message = "😐 You're Disappointed Gabriel. Realistic and wise beyond your years.";
+    resultImage.src = "assets/shocked.jpeg";
+
   } else if (highest === 'hungry') {
     message = "🍕 You're Hungry Gabriel! Always on the hunt for flavor and fun!";
+    resultImage.src = "assets/hungry.jpeg";
   }
 
   resultDiv.textContent = message;
+  resultImage.style.display = "block";
+
+  document.getElementById('restartButton').addEventListener('click', function() {
+  window.location.reload();
+});
 });
