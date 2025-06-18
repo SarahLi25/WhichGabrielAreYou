@@ -2,61 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Which Gabriel Are You?</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>🤔 Which Gabriel Are You?</h1>
-    <p class="subtitle">Take the quiz and discover your inner Gabriel!</p>
+    <h1>Which Gabriel Are You?</h1>
+    <form id="quiz-form">
+      <!-- Question 1 -->
+      <p>1. What do you do first thing in the morning?</p>
+      <label><input type="radio" name="q1" value="happy" /> Smile and stretch</label>
+      <label><input type="radio" name="q1" value="sad" /> Stare at the ceiling</label>
+      <label><input type="radio" name="q1" value="mad" /> Slam the alarm</label>
+      <label><input type="radio" name="q1" value="disappointed" /> Regret not sleeping earlier</label>
+      <label><input type="radio" name="q1" value="hungry" /> Look for food</label>
 
-    <form id="quizForm">
-      <div class="question">
-        <p>🍿 1. What’s your go-to snack?</p>
-        <label><input type="radio" name="q1" value="hungry"> Chips</label>
-        <label><input type="radio" name="q1" value="happy"> Fruit</label>
-        <label><input type="radio" name="q1" value="sad"> Ice cream</label>
-        <label><input type="radio" name="q1" value="mad"> Spicy ramen</label>
-        <label><input type="radio" name="q1" value="disappointed"> Nothing</label>
-      </div>
+      <!-- Question 2 -->
+      <p>2. What’s your go-to comfort activity?</p>
+      <label><input type="radio" name="q2" value="happy" /> Singing</label>
+      <label><input type="radio" name="q2" value="sad" /> Crying to sad music</label>
+      <label><input type="radio" name="q2" value="mad" /> Punching a pillow</label>
+      <label><input type="radio" name="q2" value="disappointed" /> Rewatching failed moments</label>
+      <label><input type="radio" name="q2" value="hungry" /> Eating chips</label>
 
-      <div class="question">
-        <p>🌤️ 2. What’s your favorite weather?</p>
-        <label><input type="radio" name="q2" value="happy"> Sunny</label>
-        <label><input type="radio" name="q2" value="sad"> Rainy</label>
-        <label><input type="radio" name="q2" value="mad"> Thunderstorm</label>
-        <label><input type="radio" name="q2" value="disappointed"> Cloudy</label>
-        <label><input type="radio" name="q2" value="hungry"> Snowy</label>
-      </div>
+      <!-- Question 3 -->
+      <p>3. How do you react to bad news?</p>
+      <label><input type="radio" name="q3" value="happy" /> Try to stay positive</label>
+      <label><input type="radio" name="q3" value="sad" /> Tear up quietly</label>
+      <label><input type="radio" name="q3" value="mad" /> Yell or vent</label>
+      <label><input type="radio" name="q3" value="disappointed" /> Just sigh</label>
+      <label><input type="radio" name="q3" value="hungry" /> Grab a snack</label>
 
-      <div class="question">
-        <p>🎨 3. What’s your favorite color?</p>
-        <label><input type="radio" name="q3" value="happy"> Yellow</label>
-        <label><input type="radio" name="q3" value="sad"> Blue</label>
-        <label><input type="radio" name="q3" value="mad"> Red</label>
-        <label><input type="radio" name="q3" value="disappointed"> Bubblegum Pink</label>
-        <label><input type="radio" name="q3" value="hungry"> Black</label>
-      </div>
+      <!-- Question 4 -->
+      <p>4. What’s your favorite type of day?</p>
+      <label><input type="radio" name="q4" value="happy" /> Sunny and clear</label>
+      <label><input type="radio" name="q4" value="sad" /> Rainy and gray</label>
+      <label><input type="radio" name="q4" value="mad" /> Stormy with thunder</label>
+      <label><input type="radio" name="q4" value="disappointed" /> Overcast and dull</label>
+      <label><input type="radio" name="q4" value="hungry" /> Any day with free food</label>
 
-      <div class="question">
-        <p>🛌 4. What's your weekend vibe?</p>
-        <label><input type="radio" name="q4" value="happy"> Hanging with friends</label>
-        <label><input type="radio" name="q4" value="sad"> Binge watching shows</label>
-        <label><input type="radio" name="q4" value="mad"> Playing competitive sports</label>
-        <label><input type="radio" name="q4" value="disappointed"> Sleeping</label>
-        <label><input type="radio" name="q4" value="hungry"> Trying new restaurants</label>
-      </div>
+      <!-- Question 5 -->
+      <p>5. Pick a word that describes you best:</p>
+      <label><input type="radio" name="q5" value="happy" /> Cheerful</label>
+      <label><input type="radio" name="q5" value="sad" /> Emotional</label>
+      <label><input type="radio" name="q5" value="mad" /> Explosive</label>
+      <label><input type="radio" name="q5" value="disappointed" /> Realistic</label>
+      <label><input type="radio" name="q5" value="hungry" /> Starving</label>
 
-      <button type="submit">🎯 Reveal My Gabriel</button>
+      <br><br>
+      <button type="submit">Find Out!</button>
     </form>
 
-    <div id="result"></div>
-    <img id="resultImage" src="" alt="Gabriel Result" />
-    <button id="restartButton">Restart</button>
+    <div id="result">
+      <p id="result-text"></p>
+      <img id="result-image" style="display:none;" alt="Gabriel Mood Image" />
+    </div>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
-
