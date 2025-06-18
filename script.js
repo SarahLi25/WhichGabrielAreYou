@@ -2,15 +2,15 @@
 let form = document.getElementById("quiz-form");
 let resultText = document.getElementById("result-text");
 let resultImage = document.getElementById("result-image");
+let resultContainer = document.getElementById("result");
+let restartButton = document.getElementById("restart-button");
 
 form.addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent page from reloading on form submission
+  event.preventDefault();
 
-  // Initialize scores for each possible result
   let happy = 0, sad = 0, mad = 0, disappointed = 0, hungry = 0;
-  const questions = ["q1", "q2", "q3", "q4", "q5"];
+  let questions = ["q1", "q2", "q3", "q4", "q5"];
 
-  // Loop through each question and tally the selected answer
   for (let i = 0; i < questions.length; i++) {
     let answer = document.querySelector('input[name="' + questions[i] + '"]:checked');
     if (answer !== null) {
@@ -22,7 +22,6 @@ form.addEventListener("submit", function (event) {
     }
   }
 
-  // Find the category with the highest score
   let highest = "happy";
   let maxScore = happy;
 
@@ -59,9 +58,24 @@ form.addEventListener("submit", function (event) {
     message = "🍕 You're Hungry Gabriel! Food is your love language.";
     imagePath = "assets/hungry.jpeg";
   }
-
-  // Show result on the page
+  
   resultText.textContent = message;
   resultImage.src = imagePath;
   resultImage.style.display = "block";
+
+  resultContainer.style.display = "block";
+  restartButton.style.display = "inline-block";
 });
+
+restartButton.addEventListener("click", function () {
+  form.reset();
+  resultText.textContent = "";
+  resultImage.src = "";
+  resultImage.style.display = "none";
+  restartButton.style.display = "none";
+});
+
+
+  
+
+ 
